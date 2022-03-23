@@ -1,10 +1,16 @@
+import { Expose } from 'class-transformer';
 import { IsEnum, IsNumber } from 'class-validator';
 import { Environment } from './env.enum';
 
-export class AppEnv {
+export class AppConfig {
+  @Expose()
+  TZ: string;
+
   @IsEnum(Environment)
-  NODE_ENV: Environment;
+  @Expose({ name: 'NODE_ENV' })
+  node: Environment;
 
   @IsNumber()
-  PORT: number;
+  @Expose({ name: 'PORT' })
+  app: number;
 }
