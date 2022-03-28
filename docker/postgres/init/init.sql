@@ -1,0 +1,3 @@
+CREATE USER backend;
+CREATE DATABASE docker;
+GRANT ALL PRIVILEGES ON DATABASE docker TO backend;
